@@ -1,38 +1,620 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.MainContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+
+}
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 10%;
+  right: 4rem;
+  top: 0;
+  position: fixed;
+  background-color: black;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+.navContainer h1 {
+  margin: 0;
+  font-weight: 800;
+}
+.listContainer{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.listContainer ul {
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+}
+
+.listContainer ul li {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.listContainer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.listContainer ul li a.active {
+  color: #febc39;
+}
+
+@media (max-width: 768px) {
+  .listContainer {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navContainer{
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Home{
+  width : 66vw;
+  height: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5vw 0vw 0vh 13vw;
+
+  @media(max-width: 768px){
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+      margin: 30vw 0 10vw 5vw;
+  }
+}
+
+.ProfileImage{
+  width:100%;
+  height: 100%;
+
+  @media(max-width:  768px){
+    width : 100vw;
+    height: 60vh;
+  }
+
+}
+
+#Name{
+  font-size: larger;
+  font-weight: 900;
+  color: #febc39;
+}
+.rightContainer{
+  width :  50%;
+  height : 100%;
+  align-items: center;
+  justify-content: center;
+
+  @media(max-width:768px){
+    width : 80%;
+  }
+}
+.homeContent{
+  font-size: 4em;
+  font-weight: 900;
+
+}
+
+.SubHeading{
+  font-size: 1.8em;
+  font-weight : 1000;
+  color : #febc39;
+}
+
+.leftContainer{
+  width:50%;
+  height : 100%;
+
+  @media(max-width:768px){
+    width : 80%;
+  }
+
+}
+
+.About{
+  width : 70vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 6vw 0vw 0vh 13vw;
+  margin-bottom: 2em;
+
+  @media(max-width : 768px){
+      width: 100vw;
+      height: 110vh;
+      flex-direction: column;
+      margin: 47vw 0 10vw 0vw;
+      justify-content: center;
+  }
+}
+
+.AboutRight{
+  width :  40%;
+  height : 100%;
+  align-items: center;
+  justify-content: center;
+  @media(max-width : 768px){
+    display: none;
+  }
+}
+.AboutLeft{
+  width :  50%;
+  height : 100%;
+  align-items: center;
+
+
+  @media(max-width : 768px){
+    width : 120vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+  }
+}
+.DetailsContainer{
+  display: flex;
+  width : 70%;
+  height: 100%;
+  margin-top: 1.5rem;
+
+  @media(max-width : 768px){
+    width : 100%;
+    margin-right: -10rem; 
+    align-items: center;
+  }
+
+}
+.Question{
+  font-size: larger;
+  color: white;
+  font-weight: 700;
+
+  @media(max-width : 768px){
+    font-size: 1.5rem;
+    margin-right: 0rem;
+  }
+}
+
+.AboutDetails{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.AboutRightDetails{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-wrap: break-word;
+}
+.Answer{
+  font-size: larger;
+  color: #8b8a8b;
+  font-weight: 600;
+  margin-left: 5em;
+
+  @media(max-width : 768px){
+    font-size: 1.5rem;
+  
+  }
+}
+
+.Details{
+  font-size: larger;
+  color: #8b8a8b;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  @media(max-width: 768px){
+    margin: 5vw 20vw  0 20vw;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+
+.DownloadCV{
+  width : 12.5em;
+  height : 4.4em;
+  background-color: #febc39;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 2rem;
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: center;
+
+  @media(max-width: 768px){
+    height: 60rem;
+    margin-left: 5em;
+
+  }
+}
+
+.downloadText{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+.Resume{
+  width : 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 6vw 0vw 0vh 13vw;
+  margin-bottom: 2em;
+
+  @media(max-width:768px){
+    width: 100vw;
+    margin : 14vw 0 0 0;
+  }
+}
+
+#status{
+  font-size: 1.4rem;
+  margin: 1rem 0 0 1rem;
+  color: #febc39;
+  @media(max-width:768px){
+    font-size:1.6rem;
+  }
+}
+
+.SkillsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width : 70vw;
+  align-items: center;
+  margin: 5vw 0vw 0vh 13vw;
+  margin-bottom: 2em;
+
+  
+  @media(max-width : 768px){
+    width: 100vw;
+    height: 100%;
+    flex-direction: column;
+    margin: 20vw 0 0 -20vw;
+}
+
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media(max-width: 768px){
+    flex-direction: column;
+    width : 100%;
+  }
+}
+
+.skill {
+  width: 50%;
+  margin: 1rem 0;
+  text-align: left;
+  @media(max-width: 768px){
+    width : 130%;
+    margin: 1.5rem 0;
+  }
+}
+
+.skillName {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: 5rem;
+
+  @media(max-width: 768px){
+    font-size: 1.3rem;
+    font-weight: 400;
+
+  }
+}
+
+.progress {
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  margin-left: 5rem;
+
+}
+
+.progressBar {
+  height: 15px;
+  border-radius: 5px;
+  background-color: #febc39;
+  text-align: right;
+  padding-right: 0.5rem;
+  color: black;
+  line-height: 13px; 
+  font-weight: bold;
+
+  @media(max-width: 768px){
+    height : 18px;
+    line-height: 16px;
+  }
+}
+
+
+.Projects{
+  width : 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vw 0vw 0vh 13vw;
+  margin-bottom: 2em;
+
+  @media(max-width:768px){
+    width: 100vw;
+  }
+
+}
+
+
+.projectsCardContainer{
+  width : 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  @media(max-width:768px){
+      flex-direction: column;
+  }
+
+}
+
+.ProjectCard{
+  width : 25rem;
+  height: 27rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #1b1b1a;
+  margin: 1vw 1vw 1vw 1vw;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-overflow: inherit;
+
+  @media(max-width:768px){
+    width : 34rem;
+    height: 32rem;
+    margin : 1em 1rem 1rem -0.5rem;
+  }
+}
+
+.cardYear{
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #febc39;
+  margin: 1rem 0 0 1rem;
+
+  @media(max-width:768px){
+    font-size: 2rem;
+  }
+}
+
+.cardTitle{
+  font-size: 1.4rem;
+  margin: 1rem 0 0 1rem;
+  @media(max-width:768px){
+    font-size:1.6rem;
+  }
+}
+
+.cardDescription{
+  font-size:medium;
+  color: #8b8a8b;
+  margin: 1rem 0 0 1rem;
+  @media(max-width:768px){
+    font-size: 1.4rem;
+  }
+}
+
+.Team{
+  width : 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vw 0vw 0vh 13vw;
+  margin-bottom: 2em;
+
+  @media(max-width:768px){
+    width : 100vw;
+    margin: 10vw 0 0 0;
+  }
+}
+
+.teamContainer{
+  width : 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  @media(max-width:768px){
+    flex-direction: column;
+  }
+}
+
+.TeamCard{
+  width : 28.33%;
+  height : 70%;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: flex-start;
+  margin: 0rem 2rem 2rem 2rem;
+
+  @media(max-width:768px){
+    width : 100%;
+    margin: 0 1rem 2rem 5rem ;
+  }
+}
+
+.teamImage{
+  width : 100%;
+  height: 30rem;
+}
+
+.TeamMateName{
+  font-size: 1.5rem;
+  font-weight:700;
+  color: #febc39;
+}
+
+.MemberRole{
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+.MemberQuotes{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #8b8a8b;
+  margin-top: 0.3rem;
+}
+
+.Contact{
+  width : 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5vw 0vw 0vh 13vw;
+  margin-bottom: 2em;
+
+  @media(max-width:768px){
+    width :100vw;
+    margin: 5vw 0 0 0;
+  }
+}
+
+.contactDetails{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height:100%;
+
+  @media(max-width:768px){
+    flex-direction: column;
+    margin: 0 0 0 5rem;
+  }
+}
+
+.imageContainer{
+  width :5rem;
+  height : 5rem;
+  border-radius: 5rem;
+  background-color: #1b1b1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @media(max-width:768px){
+    margin-top: 3rem;
+  }
+}
+
+.icon{
+  width: 2rem;
+  height: 2rem;
+  color: #febc39;
+}
+
+.IndividualDetail{
+  width:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.links{
+  font-size: large;
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer{
+  width : 100%; 
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 13vw;
+
+  @media(max-width:768px){
+    width : 100vw;
+    margin: 0 0 0 0;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.footerDetails{
+  font-size: medium;
+  color: #8b8a8b;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  @media(max-width:768px){
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 }
