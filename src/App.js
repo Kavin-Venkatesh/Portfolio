@@ -1,31 +1,80 @@
 import './App.css';
 import { useState } from 'react';
+
+
 import Logo from './Assets/photo.webp';
 import Image from './Assets/portfolio.jpg';
 import AdeshImage from './Assets/adeshImage.jpg';
 import SaranImage from './Assets/saranImage.jpg';
+import HTML from './Assets/HTML.png';
+import CSS from './Assets/CSS.png';
+import JAVASCRIPT from './Assets/JAVASCRIPT.png';
+import JAVA from './Assets/JAVA.png';
+import REACTJS from './Assets/REACTJS.png';
+import VUEJS from './Assets/VUEJS.png';
+import EXPRESSJS from './Assets/EXPRESSJS.png';
+import POSTMAN from './Assets/POSTMAN.png';
+import GITHUB from './Assets/GITHUB.png';
+import MONGODB from './Assets/MONGODB.png';
+import FIGMA from './Assets/FIGMA.png';
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot , faPhone , faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram} from '@fortawesome/free-brands-svg-icons';
 
 function App() {
   const [activeLink, setActiveLink] = useState('Home');
 
   const skills = [
-    { name: 'JavaScript', percentage: 90 },
-    { name: 'React', percentage: 80 },
-    { name: 'Java', percentage: 70 },
-    { name: 'CSS', percentage: 85 },
-    { name: 'HTML', percentage: 95 },
-    { name: 'Python', percentage: 70 },
-    {name : 'C' , percentage : 90},
-    { name : 'Nodejs' , percentage : 70},
-    { name : 'MongoDB', percentage : 50},
-  ];
+    {
+      name : 'HTML',
+      src : HTML
+    },
+    {
+      name : 'CSS',
+      src : CSS
+    },
+    {
+      name : 'JAVASCRIPT',
+      src : JAVASCRIPT
+    },
+    {
+      name : 'JAVA',
+      src : JAVA
+    },
+    {
+      name : 'REACT JS',
+      src : REACTJS
+    },
+    {
+      name : 'VUE JS',
+      src : VUEJS
+    },
+    {
+      name : 'EXPRESS JS',
+      src : EXPRESSJS
+    },
+    {
+      name : 'MONGO DB',
+      src : MONGODB
+    },
+    {
+      name : 'POST MAN',
+      src : POSTMAN
+    },
+    {
+      name : 'GIT HUB',
+      src : GITHUB
+    },
+    {
+      name : 'FIGMA',
+      src : FIGMA
+    }
+  ]
 
   const projects = [
-    {name : "Melanoma Cancer Prediction" , year : '2022-2023', StackUsed : ' React JS , Flask , CNN', Role : 'Deep Learning Model Developer',  projectDescription : 'This project involves developing a Convolutional Neural Network (CNN) model designed to predict melanoma, a type of skin cancer, based on images of skin lesions. The model is trained on a dataset of labeled images to recognize patterns and features indicative of melanoma. The goal is to create a tool that can assist medical professionals in diagnosing skin cancer more accurately and efficiently by analyzing image data, thus improving early detection and treatment outcomes.'},
-    {name : "Haxguz - An event management System", year : '2022-2023' ,StackUsed : ' React JS , Express Js , Mongo DB', Role : 'Front End Developer', projectDescription : ' Haxguz is a web application designed for managing and organizing events. Users can create and customize events, invite participants, and monitor event details through an intuitive interface. The application aims to streamline event management processes and provide an efficient platform for both organizers and attendees to interact and manage event-related activities.' },
+    {name : "Melanoma Cancer Prediction" , year : '2022-2023', StackUsed : ' React JS , Flask , CNN', Role : 'Front end Developer',  projectDescription : 'This project involves developing a Convolutional Neural Network (CNN) model designed to predict melanoma, a type of skin cancer, based on images of skin lesions. The model is trained on a dataset of labeled images to recognize patterns and features indicative of melanoma. The goal is to create a tool that can assist medical professionals in diagnosing skin cancer more accurately and efficiently by analyzing image data, thus improving early detection and treatment outcomes.'},
     {name : 'Consus - A Redefined Comiplation Platform', year : '2023-2024',StackUsed : ' React JS , Express Js , Mongo DB', Role : 'Front End Developer',  projectDescription : ' Consus is a web-based platform focused on assessing student performance in programming languages. It provides tools for creating and managing programming tests, running code submissions, and evaluating results. The platform supports various programming languages and offers features for detailed analysis of student code, including automated grading and feedback.' },
     {name :'BCC - BIT Career Connect ' , year : '2023 - 2024' ,StackUsed : 'Vue JS , Express JS , MongoDB', Role : 'Full Stack Developer', projectDescription : 'A portal for students to upload, manage, and track job and internship offers with features like submission, administrative approval, document verification, and export functionality.'}
   ];
@@ -104,7 +153,7 @@ function App() {
           <div className='AboutDetails'> <p className='Question'>Phone</p></div>
           <div className='AboutRightDetails'><p className='Answer'>+91 7904863284</p></div>
           </div>
-          <button className='DownloadCV' onClick={() => window.open('https://drive.google.com/file/d/1SNnX1WPmvHGKPDQg10cgjnNTRZHahR2w/view?usp=drive_link' , '_blank')}>
+          <button className='DownloadCV' onClick={() => window.open('https://drive.google.com/file/d/1RIQgMdDFiI-CI0Pls3tXFddKZSdvscM_/view?usp=sharing' , '_blank')}>
             <p className='downloadText'>DOWNLOAD CV</p>
           </button>
         </div>
@@ -129,24 +178,16 @@ function App() {
     <div id="skills" className="SkillsContainer">
     <h1 className='homeContent'>My Skills</h1>
     <p className='Details'>"Talk is cheap. Show me the code." – Linus Torvalds </p>
-        <div className="skillsGrid">
-          {skills.map((skill, index) => (
-            <div key={index} className="skill">
-              <div className="skillName">
-                <span>{skill.name}</span>
-                <span>{skill.percentage}%</span>
-              </div>
-              <div className="progress">
-                <div
-                  className="progressBar"
-                  style={{ width: `${skill.percentage}%` }}
-                >
-                  {skill.percentage}%
-                </div>
-              </div>
-            </div>
-          ))}
+    <div className='skillCardContainer'>
+    {
+      skills.map((skill) =>(
+        <div className='skillCard'> 
+              <img className='skillCardimg' src={skill.src}/>
+              <h3 className='skillName'> { skill.name }</h3>
         </div>
+      ))
+    }
+    </div>
       </div>
 
       <div id= "projects" className='Projects'>

@@ -322,16 +322,52 @@ body {
 }
 
 }
-
-.skillsGrid {
+.skillCardContainer{
+  width : 70vw;
+  height : 100%;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
   flex-wrap: wrap;
-  justify-content: space-between;
+  flex-shrink: 0;
 
-  @media(max-width: 768px){
-    flex-direction: column;
-    width : 100%;
+  @media(max-width : 768px){
+    width: 100vw;
+    height: 100%;
+    overflow-y: none;
+    overflow-x: none;
+    margin : 0 0 0 10rem;
+}
+}
+
+.skillCard{
+  width : 15rem;
+  height : 15rem;
+  display: flex;
+  margin : 1rem 1rem 1rem 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @media (max-width : 768px) {
+    width : 20rem;
+    height: 20rem;
+
   }
+}
+
+.skillCardimg{
+  width : 60%;
+  height: 60%;
+}
+
+.skillCardimg:hover{
+  transform: scale(1, 2);
+  transition: .2s;
+  width: 15.025rem;
 }
 
 .skill {
@@ -347,14 +383,11 @@ body {
 .skillName {
   display: flex;
   justify-content: space-between;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-left: 5rem;
-
+  font-size: 1.8rem;
+  color:#a8a091;
   @media(max-width: 768px){
     font-size: 1.3rem;
     font-weight: 400;
-
   }
 }
 
