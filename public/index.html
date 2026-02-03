@@ -7,17 +7,35 @@
     <meta name="theme-color" content="#000000" />
     
     <!-- SEO Meta Tags -->
-    <title>Kavin Portfolio - Full Stack Developer</title>
-    <meta name="description" content="Explore Kavin's professional portfolio showcasing web development projects, skills, and experience. Full stack developer specializing in React, JavaScript, and modern web technologies." />
-    <meta name="keywords" content="portfolio, web developer, full stack developer, React developer, JavaScript, web design, frontend, backend" />
-    <meta name="author" content="Kavin" />
+    <title>Kavin Portfolio - Full Stack Developer & Web Designer</title>
+    <meta name="description" content="Explore Kavin Venkatesh's professional portfolio showcasing web development projects, skills, and expertise. Full stack developer specializing in React, JavaScript, and modern web technologies." />
+    <meta name="keywords" content="Kavin Venkatesh, portfolio, web developer, full stack developer, React developer, JavaScript, web design, frontend, backend" />
+    <meta name="author" content="Kavin Venkatesh" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kavin Portfolio - Full Stack Developer & Web Designer" />
+    <meta property="og:description" content="Explore Kavin's professional portfolio showcasing web development projects and expertise." />
+    <meta property="og:url" content="https://kavinv.vercel.app" />
+    <meta property="og:image" content="https://kavinv.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kavin Portfolio - Full Stack Developer & Web Designer" />
+    <meta name="twitter:description" content="Explore Kavin's professional portfolio showcasing web development projects." />
+    
     <!-- LinkedIn Meta Tags -->
     <meta property="linkedin:title" content="Kavin Portfolio - Full Stack Developer" />
     <meta property="linkedin:description" content="Professional portfolio showcasing web development expertise and projects." />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kavinv.vercel.app" />
       
     <!-- Preconnect & DNS Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,19 +49,39 @@
     
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="fJRbwoYYTOEpQQCV4F8OQzgIExjeA6-Gq19Ln80FA9k" />
-        
-    <!-- Structured Data (Schema.org) -->
+    
+    <!-- Structured Data (Schema.org) - Person -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Kavin",
+      "name": "Kavin Venkatesh",
       "url": "https://kavinv.vercel.app",
+      "image": "https://kavinv.vercel.app/profile-image.png",
+      "description": "Full Stack Developer",
       "sameAs": [
         "https://www.linkedin.com/in/kavin-venkatesh/",
-        "https://github.com/Kavin-Venkatesh",
+        "https://github.com/Kavin-Venkatesh"
       ],
       "jobTitle": "Full Stack Developer"
+    }
+    </script>
+    
+    <!-- Structured Data (Schema.org) - Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Kavin's Portfolio",
+      "url": "https://kavinv.vercel.app",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://kavinv.vercel.app?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
   </head>
