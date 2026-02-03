@@ -182,7 +182,7 @@ function App() {
     {
       skills.map((skill) =>(
         <div className='skillCard'> 
-              <img className='skillCardimg' src={skill.src}/>
+              <img className='skillCardimg' src={skill.src} alt={skill.name}/>
               <h3 className='skillName'> { skill.name }</h3>
         </div>
       ))
